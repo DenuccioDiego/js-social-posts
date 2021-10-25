@@ -1,4 +1,12 @@
 
+
+
+const d = new Date();
+d.setDate(d.getDate() + 10);
+
+
+
+
 let posts = [
 
      post_1 = {
@@ -8,7 +16,7 @@ let posts = [
           immagine : "https://unsplash.it/300/150?image=",
           autore : "Philip Mangione" ,
           numeroLikes : 80 ,
-          dataCreazione : "4 mesi fa",
+          dataCreazione :`${d}`,
      },
 
      post_2 = {
@@ -18,7 +26,7 @@ let posts = [
           immagine : "https://picsum.photos/300/150",
           autore : "Sofia Perlari" ,
           numeroLikes : 150 ,
-          dataCreazione : "2 mesi fa",
+          dataCreazione : `${d}`,
      },
 
      post_3 = {
@@ -28,7 +36,7 @@ let posts = [
           immagine : "https://placebear.com/300/150",
           autore : "Diego Denuccio",
           numeroLikes : 15 ,
-          dataCreazione : "15 giorni fa",
+          dataCreazione : `${d}`,
      },
 
 ];
@@ -58,7 +66,6 @@ for (let i=0; i<posts.length; i++){
      
      
 }
-
 
 
 
