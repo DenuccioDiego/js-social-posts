@@ -1,10 +1,7 @@
 
 
-
 const d = new Date();
-d.setDate(d.getDate() + 10);
-
-
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 
 let posts = [
@@ -16,7 +13,7 @@ let posts = [
           immagine : "https://unsplash.it/300/150?image=",
           autore : "Philip Mangione" ,
           numeroLikes : 80 ,
-          dataCreazione :`${d}`,
+          dataCreazione :`${months[d.getMonth()+1]}`,
      },
 
      post_2 = {
@@ -26,7 +23,7 @@ let posts = [
           immagine : "https://picsum.photos/300/150",
           autore : "Sofia Perlari" ,
           numeroLikes : 150 ,
-          dataCreazione : `${d}`,
+          dataCreazione : `${months[d.getMonth()+2]}`,
      },
 
      post_3 = {
@@ -36,7 +33,7 @@ let posts = [
           immagine : "https://placebear.com/300/150",
           autore : "Diego Denuccio",
           numeroLikes : 15 ,
-          dataCreazione : `${d}`,
+          dataCreazione : `${months[d.getMonth()-1]}`,
      },
 
 ];
