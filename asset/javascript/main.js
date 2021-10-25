@@ -9,7 +9,7 @@ let posts = [
      post_1 = {
           id : 1 ,
           contenuto : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptate deleniti ex?",
-          avatar : "https://www.placecage.com/50/50",
+          avatar : "Link-sbagliato-per-bonus",
           immagine : "https://unsplash.it/300/150?image=",
           autore : "Philip Mangione" ,
           numeroLikes : 80 ,
@@ -38,16 +38,27 @@ let posts = [
 
 ];
 
+
+
+
+
+
 let = selezioneContainer = document.querySelector(".container")
 console.log(selezioneContainer)
 
 for (let i=0; i<posts.length; i++){
+
      let singoloPost = posts[i]
+
+     var myStr = posts[i].autore;
+     var matches = myStr.match(/\b(\w)/g);
+     matches = matches.join('');
+         
 
      selezioneContainer.insertAdjacentHTML('beforeend', `<div class="card w-50 mx-auto mb-5">
      <div class="card-body">
           <div class="d-flex">
-               <img src="${singoloPost.avatar}" class="h-25 rounded-circle me-4" alt="">
+               <img src="${singoloPost.avatar}" class="h-25 rounded-circle me-4" alt="${matches}">
                <div>
                     <h5 class="card-title">${singoloPost.autore}</h5>
                     <p class="card-text"><small class="text-muted">${singoloPost.dataCreazione}</small></p>
