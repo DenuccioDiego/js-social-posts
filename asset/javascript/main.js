@@ -1,5 +1,4 @@
 
-
 const d = new Date();
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
@@ -40,11 +39,8 @@ let posts = [
 
 
 
-
-
-
 let = selezioneContainer = document.querySelector(".container")
-console.log(selezioneContainer)
+
 
 for (let i=0; i<posts.length; i++){
 
@@ -55,30 +51,51 @@ for (let i=0; i<posts.length; i++){
      matches = matches.join('');
          
 
-     selezioneContainer.insertAdjacentHTML('beforeend', `<div class="card w-50 mx-auto mb-5">
-     <div class="card-body">
-          <div class="d-flex">
-               <img src="${singoloPost.avatar}" class="h-25 rounded-circle me-4" alt="${matches}">
-               <div>
-                    <h5 class="card-title">${singoloPost.autore}</h5>
-                    <p class="card-text"><small class="text-muted">${singoloPost.dataCreazione}</small></p>
+     selezioneContainer.insertAdjacentHTML('beforeend', 
+     `<div class="card w-50 mx-auto mb-5">
+          <div class="card-body">
+               <div class="d-flex">
+                    <img src="${singoloPost.avatar}" class="h-25 rounded-circle me-4" alt="${matches}">
+                    <div>
+                         <h5 class="card-title">${singoloPost.autore}</h5>
+                         <p class="card-text"><small class="text-muted">${singoloPost.dataCreazione}</small></p>
+                    </div>
                </div>
+          
+               <p class="card-text">${singoloPost.contenuto}</p>
+          
           </div>
-          
-          <p class="card-text">${singoloPost.contenuto}</p>
-          
-     </div>
-     <img src="${singoloPost.immagine}" class="card-img-bottom h-50 p-3" alt="...">
-</div>`)
-     
-     
-     
+          <img src="${singoloPost.immagine}" class="card-img-bottom h-50 p-3" alt="...">
+
+          <div class="row align-items-baseline p-3">
+               <button type="button" class="btn col"><i class="fas fa-thumbs-up"></i>Mi piace</button>
+               <span id="like-counter" class="col">Piace a <b>${singoloPost.numeroLikes}</b> persone </span>
+          </div>
+     </div>`)
 }
 
+const bottoniLikes = document.getElementsByClassName("btn")
+for (i=0; i<posts.length; i++){
+     const bottoneLike = bottoniLikes[i];
+     bottoneLike.addEventListener('click', premiLike)
+}
+
+function premiLike(){
+     if(this.classList.contains("verde")){     
+          return
+
+     }
+
+     this.classList.add("verde");
+     const postId = this.getAttribute("data-post-id");
+     console.log(postId)
+     const counterLikeEl = document.getElementById("like-counter-" + postId);
+     counterLikeEl.innerHTML = parseInt(counterLikeEl.innerHTML) + 1;
 
 
 
 
+}
 
 
 
